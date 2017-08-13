@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: fabric8-example
+  namespace: services
+  labels:
+    app: fabric8-example
+    provider: laegler
+    group: io.laegler.fabric8.example
+    project: fabric8-example
+    version: 0.0.1-SNAPSHOT
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fabric8-example
+    spec:
+      containers:
+      - name: fabric8-example
+        image: fabric8-example:0.0.1-SNAPSHOT
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: rest
+          containerPort: 8888
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30

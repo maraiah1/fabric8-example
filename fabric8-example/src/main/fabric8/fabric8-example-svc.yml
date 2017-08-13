@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fabric8-example
+  namespace: services
+  labels:
+    app: fabric8-example
+    provider: laegler
+    group: io.laegler.fabric8.example
+    project: fabric8-example
+    version: 0.0.1-SNAPSHOT
+spec:
+  selector:
+    app: fabric8-example
+    provider: laegler
+  ports:
+  - name: api
+    port: 8888

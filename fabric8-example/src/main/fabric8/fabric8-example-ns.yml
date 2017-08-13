@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: services
+  labels:
+    name: services
+    provider: laegler
+    group: io.laegler.fabric8.example
+    version: 0.0.1-SNAPSHOT
